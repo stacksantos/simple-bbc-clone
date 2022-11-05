@@ -1,0 +1,287 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: inherit;
+}
+
+:root {
+/* -------------------------------------------------------------------------- */
+/*                                COLOR PALETTE                               */
+/* -------------------------------------------------------------------------- */
+  /* primary colors */
+  --primary: #043251;
+  --secondary: #dead00;
+  --light: #e9eff3;
+  --dark: #000e18;
+
+
+  /* mono colors */
+  --black: rgb(0, 0, 0);
+  --darkGray: rgb(43, 43, 43);
+  --gray: rgb(112, 112, 112);
+  --lightGray: rgb(189, 189, 189);
+  --white: rgb(255, 255, 255);
+
+/* -------------------------------------------------------------------------- */
+/*                                 TYPOGRAPHY                                 */
+/* -------------------------------------------------------------------------- */
+
+  /* fonts */
+  --mainFont: "Fira Sans Condensed", sans-serif;
+  --secondFont: "Montserrat", sans-serif;
+  --mono: 'Roboto Mono', monospace;
+}
+
+
+/* -------------------------------------------------------------------------- */
+/*                                 ANIMATIONS                                 */
+/* -------------------------------------------------------------------------- */
+
+
+@keyframes pulse-animation {
+  0% {
+    box-shadow: 0px 0px 0px 0px rgb(255, 255, 255);
+  }
+  100% {
+    box-shadow: 0px 0px 0px 10px rgba(0, 0, 0, 0);
+  }
+}
+.pulse {
+  animation: pulse-animation 2s infinite;
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                   BUTTONS                                  */
+/* -------------------------------------------------------------------------- */
+
+/* pill button */
+
+.btn-pill {
+  min-width: 8rem;
+  height: 2.2rem;
+  color: white;
+  padding: 5px 10px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: flex;
+  align-items: center;
+  outline: none;
+  border-radius: 20px;
+  border: 2px solid var(--primary);
+  background: var(--primary);
+}
+.btn-pill:hover {
+  background: var(--secondary);
+  color: var(--primary);
+  border-color: var(--secondary);
+}
+.btn-pill i {
+  width: 1.7rem;
+  height: 1.7rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: black;
+  background-color: var(--secondary);
+  border-radius: 50%;
+  margin-left: 1.2rem;
+}
+.btn-pill:hover i {
+  background-color: var(--primary);
+  color: white;
+}
+
+/* pill button reversed */
+
+.btn-pill-2 {
+  width: 14rem;
+  height: 3.5rem;
+  color: black;
+  padding: 8px 10px;
+  font-weight: 600;
+  font-size: 1.4rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  outline: none;
+  border-radius: 40px;
+  border: 2px solid var(--secondary);
+  background: var(--secondary);
+  text-transform: capitalize;
+}
+.btn-pill-2:hover {
+  background: var(--primary);
+  color: var(--light);
+  border-color: var(--primary);
+}
+.btn-pill-2 i {
+  width: 2.5rem;
+  height: 2.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  background-color: var(--primary);
+  border-radius: 50%;
+}
+.btn-pill-2:hover i {
+  background-color: var(--secondary);
+  color: black;
+}
+
+/* button retro */
+
+.btn-retro {
+  min-width: 130px;
+  width: 10rem;
+  height: 50px;
+  color: #fff;
+  padding: 5px 10px;
+  font-family: var(--mainFont);
+  font-weight: 400;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  outline: none;
+  border: 1px solid var(--secondary);
+  color: var(--secondary);
+  background: transparent;
+}
+.btn-retro:hover:after {
+  top: 0;
+  left: 0;
+}
+.btn-retro:after {
+  content: "";
+  width: 100%;
+  z-index: -1;
+  position: absolute;
+  height: 100%;
+  top: 5px;
+  left: 5px;
+  transition: 0.2s;
+  background-color: var(--primary);
+}
+.btn-retro i {
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  background-color: var(--primary);
+  border-radius: 20%;
+}
+.btn-retro:hover i {
+  background-color: var(--secondary);
+  color: black;
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                   ASSETS                                   */
+/* -------------------------------------------------------------------------- */
+
+/* heading line */
+
+.heading-line::before {
+  display: block;
+  padding-top: 0.1rem;
+  content: "";
+  width: 10rem;
+  height: 0.1rem;
+  background-color: white;
+  margin: 0 auto;
+}
+.heading-line::after {
+  display: block;
+  padding-top: 0.4rem;
+  content: "";
+  width: 2rem;
+  height: 0.2rem;
+  background-color: white;
+  margin: 0 auto;
+  margin-bottom: 1rem;
+}
+
+/* border */
+.lineBorder {
+  display: block;
+  margin-top: 3.3rem;
+  padding-top: 0.1rem;
+  content: "";
+  width: 35rem;
+  background-color: white;
+}
+
+/* vertical divider */
+
+.divider {
+  border-right: 1px solid white;
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                  ALIGNMENT                                 */
+/* -------------------------------------------------------------------------- */
+
+.flex,.center,.align,.start,.end,.justify,.around,.between,.base,.justStart,.justEnd,
+.col,.row,.wrap,.noWrap {
+  display: flex;
+}
+.flex {
+  display: flex;
+}
+.center {
+  justify-content: center;
+  align-items: center;
+}
+.align {
+  align-items: center;
+}
+.start {
+  align-items: flex-start;
+}
+.end {
+  align-items: flex-end;
+}
+.justify {
+  justify-content: center;
+}
+.around {
+  justify-content: space-around;
+}
+.even {
+  justify-content: space-evenly;
+}
+.between {
+  justify-content: space-between;
+}
+.base {
+  justify-content: baseline;
+}
+.justStart {
+  justify-content: flex-start;
+}
+.justEnd {
+  justify-content: flex-end;
+}
+.col {
+  flex-direction: column;
+}
+.row {
+  flex-direction: row;
+}
+.wrap {
+  flex-wrap: wrap;
+}
+.noWrap {
+  flex-wrap: nowrap;
+}
